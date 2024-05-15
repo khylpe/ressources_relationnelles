@@ -1,0 +1,17 @@
+{
+       "recommendations": [
+              "oderwat.indent-rainbow",
+              "dbaeumer.vscode-eslint",
+              "xdebug.php-debug",
+              "bmewburn.vscode-intelephense-client",
+              "arjun.swagger-viewer",
+              "bradlc.vscode-tailwindcss",
+              "chakrounanas.turbo-console-log",
+              "aaron-bond.better-comments",
+              "redhat.vscode-yaml",
+              "formulahendry.auto-rename-tag",
+              "bierner.color-info",
+              "ms-vsliveshare.vsliveshare",
+              "chinchiheather.vscode-margin-colours"
+       ]
+}
