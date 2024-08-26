@@ -3,8 +3,8 @@ import { waitAndClick, loginAsSuperAdmin } from './utils';
 describe('Ressource creation', () => {
        it("Create ressource with correct data", () => {
               loginAsSuperAdmin();
-              cy.visit('http://localhost:3000/creer-ressource');
-              cy.url().should('eq', 'http://localhost:3000/creer-ressource');
+              cy.visit('http://91.108.112.237:3001/creer-ressource');
+              cy.url().should('eq', 'http://91.108.112.237:3001/creer-ressource');
               cy.intercept('POST', '/api/ressource/create').as('createRequest');
 
               const randomTitle = generateRandomText(10);
