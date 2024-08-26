@@ -91,7 +91,7 @@ pipeline {
                 cd /srv/aio-tools/ressources_relationnelles
                 docker-compose down
                 git fetch
-                git checkout jenkins
+                git checkout prod
                 git pull
                 docker-compose up --build -d
             '''
