@@ -32,7 +32,7 @@ export default function Footer() {
                                    height={160}
                                    draggable={false}
                             />
-                            <p>{`© 2024 (RE)Sources Relationnelles.`}</p>
+                            <p>{`© 2024 (Re)Sources Relationnelles.`}</p>
                             <p>{`Cube`}</p>
                             <Link href="/mentions-legales"><p>{`Mentions légales`}</p></Link>
                             <div className="mt-6 flex flex-row items-center">
