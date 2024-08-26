@@ -65,8 +65,8 @@ pipeline {
 
         stage('Run Frontend Tests') {
             steps {
+                // Tests Cypress
                 dir('frontend') {
-                    // Get the Docker network name used by your services
                     sh '''
                     NETWORK_NAME=$(docker-compose ps -q | xargs docker inspect -f '{{json .NetworkSettings.Networks }}' | jq -r 'keys[]' | head -n 1)
 
