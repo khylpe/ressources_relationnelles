@@ -200,12 +200,27 @@ class AuthController extends Controller
 
        protected function respondWithTokenAndUserData($token, $data = [])
        {
-
               $defaultTTL = config('jwt.ttl');
               $minutes = $data['remember'] ? $defaultTTL : 0;
 
-              $cookie = cookie('token', $token, $minutes, null, null, false, true);
-              return response()->json(['user' => $data['user'], 'newUser' => $data['newUser'] ?? false])->withCookie($cookie);
+              // Define the cookie with cross-subdomain compatibility
+              $cookie = cookie(
+                     'token',            // Name of the cookie
+                     $token,             // Value of the cookie (JWT token)
+                     $minutes,           // Expiration time in minutes
+                     '/',                // Path
+                     '.crahe-arthur.com',       // Domain to allow sharing across subdomains
+                     true,               // Secure: only send over HTTPS
+                     true,               // HttpOnly: prevent JavaScript access
+                     false,              // Raw: no URL encoding
+                     'Lax'              // SameSite: allow cross-origin cookies
+              );
+
+              // Return the response with the cookie attached
+              return response()->json([
+                     'user' => $data['user'],
+                     'newUser' => $data['newUser'] ?? false
+              ])->withCookie($cookie);
        }
 
        /**
